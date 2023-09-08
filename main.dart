@@ -1,46 +1,47 @@
 import 'package:flutter/material.dart';
 
+
 void main(){
-  runApp(const MyApp());
+  runApp(MyApp());
 }
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Center(child: Text('Home')),
-          backgroundColor: Colors.green,
-         toolbarHeight: 100,
-          elevation: 70,
-          leading:Icon(Icons.add_business),
-          actions: [
-            Icon(Icons.search),
-          ],
-          
+          title: Center(child: Text('Profile')),
+          backgroundColor: Colors.blueAccent,
         ),
-     body: Column(
-       mainAxisAlignment: MainAxisAlignment.center,
-      /// crossAxisAlignment: CrossAxisAlignment.start,
-       children: [
-         Text('This is mod 5 Assignment',style: TextStyle(
-           fontSize: 16,color: Colors.black
-         ),),
-         Row(
-           mainAxisAlignment: MainAxisAlignment.center,
-           children: [
-           Text('My',style: TextStyle(color: Colors.red),),
-             Text(' phone',style: TextStyle(color: Colors.blue),),
-             Text(' name',style: TextStyle(color: Colors.purple),),
-             SizedBox(width: 10,),
-             Text('Your phone name',style: TextStyle(color: Colors.amber),),
-           ],
-         )
-         
-       ],
-     ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.account_circle,
+                  color: Colors.green,
+                  size: 48,)
+
+              
+              ],
+
+            ),
+            Text('Jhon Doe',style: TextStyle(
+              color: Colors.green,fontSize: 22
+            ),),
+            Text('Flutter Batch 4',style: TextStyle(
+                color: Colors.blue,fontSize: 16
+            ),)
+          ],
+        ),
       ),
     );
   }
